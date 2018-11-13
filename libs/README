@@ -1,1 +1,3 @@
-This directory contains the static portaudio library (Windows) to which we'll link.
+This directory contains the compiled x64 static portaudio library (Windows) to which we'll link.
+
+
