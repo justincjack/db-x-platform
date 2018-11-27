@@ -4981,6 +4981,21 @@ int SIGNAL::pullSIPoffstack(struct SIGNAL::__socket *s) {
                                                                     printf("Setting \"My Number\" for this call as: \"%s\"\n", dialog->callinfo.did);
                                                                 }
                                                             }
+                                                        } else if (JSTRING::matches((char *)"Unique-ID", message_parse[mp_itr]->ptr)) {
+                                                            if (!dialog->callinfo.is_intercom) {
+                                                                int send_change_alert = 0;
+                                                                if (dialog->callinfo.uniqueid[0] == 0) { // No Unique ID.
+                                                                    if (value_length > 0) {
+                                                                        sprintf(dialog->callinfo.uniqueid, "%.*s", ((value_length<200)?value_length:199), value_ptr);
+                                                                        send_change_alert = 1;
+                                                                    }
+                                                                }
+                                                                if (send_change_alert) { // DID change CID change
+                                                                    this->dialog_change_status(dialog, dialog->callinfo.status, 1);
+                                                                    printf("Setting the \"Unique-ID\" for this call as: \"%s\"\n", dialog->callinfo.uniqueid);
+                                                                }
+                                                            }
+
                                                         }
                                                     }
                                                 }
