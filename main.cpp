@@ -216,14 +216,6 @@ int main(int argc, const char **argv) {
 //    sprintf(ss.userinfo.callerid, "8175726610");
 //    sprintf(ss.userinfo.username, "Justin Jack");
     
-    /* For deedleserver2.com */
-//    sprintf(ss.auth.password, "Oicu812!");
-//    sprintf(ss.SIP_server_IP, "deedleserver2.com");
-    
-    
-    /* For deedleserver3.com */
-//    sprintf(ss.auth.username, "deedleuser");
-//    sprintf(ss.SIP_server_IP, "deedleserver3.com");
     
     /* Callbacks */
     ss.callbacks.call_status_change_callback = &call_change;
@@ -283,7 +275,7 @@ int main(int argc, const char **argv) {
     add_signal_server((char *)"deedleserver3.com", config);
     
     strcpy(ss.SIP_server_IP, get_signal_server(config));
-    sprintf(ss.auth.password, "Oicu812!");
+    sprintf(ss.auth.password, "All3y3z0nM3");
     
     config->signal = 0;
     config->extension = 0;
