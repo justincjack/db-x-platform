@@ -211,7 +211,7 @@ int main(int argc, const char **argv) {
     ss.extension = 0;
     ss.SIP_server_port = 5060;
     ss.do_not_disturb = 1;
-    sprintf(ss.auth.password, "Oicu812!");
+    sprintf(ss.auth.password, "rU12nRPn");
 
 //    sprintf(ss.userinfo.callerid, "8175726610");
 //    sprintf(ss.userinfo.username, "Justin Jack");
