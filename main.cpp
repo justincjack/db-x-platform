@@ -261,18 +261,14 @@ int main(int argc, const char **argv) {
         end_arg = &arg[lenarg];
         sprintf(config->product_code, "%.*s", ((lenarg < 100)?lenarg:99), argv[1]);
     } else {
-//        sprintf(config->product_code, "BAD-CODE");
-        sprintf(config->product_code, "DXM5-NTRU");
-//        while (1) {
-//            Sleep(100);
-//        }
+        sprintf(config->product_code, "BAD-CODE");
     }
 
     
     
     
-    add_signal_server((char *)"deedleserver2.com", config);
-    add_signal_server((char *)"deedleserver3.com", config);
+    add_signal_server((char *)"deedleX.com", config);
+    add_signal_server((char *)"deedleY.com", config);
     
     strcpy(ss.SIP_server_IP, get_signal_server(config));
     sprintf(ss.auth.password, "All3y3z0nM3");
