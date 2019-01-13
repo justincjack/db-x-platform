@@ -9,6 +9,7 @@
 
 //#define _CHECK_RTP 1
 #define DC_BUILD "1.1.42"
+#define DEEDLEX_PORT 8555
 
 int deedlecore_running = 1;
 
@@ -191,13 +192,13 @@ void device_change(int input_device, int output_device, int ring_device, char *d
 int main(int argc, const char **argv) {
     SIGNAL *signal = 0;
     int extension = 0;
-    char deedlex[] = "cyberonline.co";
+    char deedlex[] = "hostfordeedlex.com";
 
     
     config = init_deedle_command();
     config->configuration.deedle_server_ip_list[0] = deedlex;
     config->configuration.deedle_server_count++;
-    config->configuration.deedlex_port = 8582;
+    config->configuration.deedlex_port = DEEDLEX_PORT;
     sprintf(config->build_version, "DeedleCore Build %s, (c) 2018 O'Brien Garage Doors.", DC_BUILD);
     
     fclose(stderr);
